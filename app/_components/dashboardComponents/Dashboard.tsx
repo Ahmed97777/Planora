@@ -1,4 +1,5 @@
 import Sidebar from "../Sidebar";
+import KanbanBoard from "./KanbanBoard";
 import DashboardTopBar from "./DashboardTopBar";
 import { Project, Task, User } from "@/app/_dataTypes/types";
 import {
@@ -44,6 +45,18 @@ export default async function Dashboard({
           initialSearch={searchParams.search ?? ""}
           initialPriority={(searchParams.priority as string) ?? "all"}
         />
+
+        <main className="flex-1 overflow-auto px-8 py-8">
+          <KanbanBoard
+            todo={todo}
+            inProgress={inProgress}
+            done={done}
+            totalProjects={projects.length}
+            selectedProject={selectedProject}
+            projectMap={projectMap}
+            projectDetails={projectDetails}
+          />
+        </main>
       </div>
     </div>
   );

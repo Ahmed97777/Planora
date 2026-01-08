@@ -28,7 +28,7 @@ export default function ProjectHeader({
 
         <div className="flex items-center gap-3 min-w-0">
           <p
-            className="text-sm text-primary-300 min-w-0 truncate wrap-break-word max-w-[360px]"
+            className="text-sm text-primary-300 min-w-0 truncate wrap-break-word max-w-90"
             title={project.projectDescription}
           >
             {project.projectDescription}
