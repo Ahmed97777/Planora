@@ -1,3 +1,4 @@
+import Sidebar from "../Sidebar";
 import { Project, Task, User } from "@/app/_dataTypes/types";
 import {
   getProjectById,
@@ -30,6 +31,12 @@ export default async function Dashboard({
   }
 
   return (
-    <div className="flex flex-1 overflow-hidden bg-primary-950 text-primary-100 h-full"></div>
+    <div className="flex flex-1 overflow-hidden bg-primary-950 text-primary-100 h-full">
+      <Sidebar
+        selectedProject={selectedProject}
+        projects={projects}
+        user={user}
+      />
+    </div>
   );
 }
