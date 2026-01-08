@@ -1,4 +1,5 @@
 import Sidebar from "../Sidebar";
+import DashboardTopBar from "./DashboardTopBar";
 import { Project, Task, User } from "@/app/_dataTypes/types";
 import {
   getProjectById,
@@ -37,6 +38,13 @@ export default async function Dashboard({
         projects={projects}
         user={user}
       />
+
+      <div className="flex-1 flex flex-col overflow-hidden h-full">
+        <DashboardTopBar
+          initialSearch={searchParams.search ?? ""}
+          initialPriority={(searchParams.priority as string) ?? "all"}
+        />
+      </div>
     </div>
   );
 }

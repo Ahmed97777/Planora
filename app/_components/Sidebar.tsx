@@ -1,15 +1,15 @@
 "use client";
 
 import { useTransition } from "react";
-import { Project } from "../_dataTypes/types";
-import { getInitials } from "../_lib/utils/functions";
-import { Folder } from "lucide-react";
-import Header from "./Header";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { getInitials } from "../_lib/utils/functions";
+import { Project } from "../_dataTypes/types";
+import NewProjectModal from "./dashboardComponents/Dashboard Modals/NewProjectModal";
+import ProjectActionsMenu from "./dashboardComponents/ProjectActionsMenu";
+import Header from "./Header";
 import SpinnerTiny from "./SpinnerTiny";
-import NewProjectModal from "./dashboard/Dashboard Modals/NewProjectModal";
-import ProjectActionsMenu from "./dashboard/ProjectActionsMenu";
 import SignOut from "./SignOut";
+import { Folder } from "lucide-react";
 
 interface SidebarProps {
   selectedProject: string | null;
