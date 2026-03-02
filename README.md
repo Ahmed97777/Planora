@@ -72,7 +72,7 @@ Includes project name, project description, task title, task description, priori
 
 ---
 
-### 🔍 Advanced Filtering (Priority status, and Keyword search) and Sorting for tasks (Sort by due date (Default), Sorted Earliest first, and Sorted Latest first)
+### 🔍 Advanced Filtering (Priority status, and Keyword search) and Sorting for tasks (Sort by Creation Time (Default), Sorted Earliest first, and Sorted Latest first)
 
 Real-time task filtering by priority status, and keyword search.
 
