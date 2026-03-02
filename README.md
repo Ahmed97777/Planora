@@ -18,17 +18,107 @@ A high-performance project management platform built with **Next.js 16** App Rou
 - **Server Actions:** All mutations (Create, Edit, Delete) are handled via Server Actions.
 - **Streaming & Suspense:** Granular loading states via `loading.tsx` and custom `DashboardSkeleton.tsx` for a "perceived performance" boost.
 - **Structured Data Flow:**
-
   - `_actions/`: Centralized server-side logic and database mutations.
   - `_lib/`: Shared business logic, data fetching services, and validation schemas.
   - `_dataTypes/`: Centralized TypeScript interfaces to ensure end-to-end type safety.
 
 - **Modular UI:** Atomic component design (Modals, Inputs, Buttons) for high reusability and maintainability.
 
-## 🛠️ Getting Started
+## 📸 Screenshots
 
-1. **Clone & Install:** `npm install`
-2. **Environment Variables:** Create a `.env.local` with your `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-3. **Run Development:** `npm run dev`
+---
+
+### 🔐 Welcome and Authentication Page
+
+Customized Design for A Welcome Page. Secure authentication flow powered by Supabase Auth with protected routes and Proxy-based access control.
+
+![Authentication Page](./screenshots/Welcome%20Page.PNG)
+
+![Authentication Page](./screenshots/Sign%20in.PNG)
+
+![Authentication Page](./screenshots/Sign%20up.PNG)
+
+---
+
+### 🧩 Kanban Board Overview
+
+The main dashboard displaying projects and tasks organized in a Kanban board.  
+Tasks are grouped by status (**To Do / In Progress / Done**) with visible priorities and actions.
+
+![Kanban Board Overview 1](./screenshots/Kanban-Board.PNG)
+
+![Kanban Board Overview 2](./screenshots/Kanban-Board%202.PNG)
+
+![Kanban Board Overview all](./screenshots/All%20Projects%20Kanban-Board.PNG)
+
+---
+
+### 📝 Project/Task Modal (Create / Edit)
+
+Modal used for creating and editing projects and tasks.  
+Includes project name, project description, task title, task description, priority selection, due date, and status updates with optimistic UI.
+
+![Project Modal Create](./screenshots/Create%20Project%20Modal.PNG)
+
+![Project Modal Edit](./screenshots/Edit%20Project%20Modal.PNG)
+
+![Project Modal Delete](./screenshots/Delete%20Project%20Modal.PNG)
+
+![Task Modal Create](./screenshots/Create%20Task%20Modal.PNG)
+
+![Task Modal Edit](./screenshots/Edit%20Task%20Modal.PNG)
+
+![Task Modal Delete](./screenshots/Delete%20Task%20Modal.PNG)
+
+---
+
+### 🔍 Advanced Filtering
+
+Real-time task filtering by priority status, and keyword search.
+
+![Advanced Filtering](./screenshots/Priority%20Filter%20Feature.PNG)
+
+![Advanced Filtering](./screenshots/Search%20Feature.PNG)
+
+![Advanced Filtering](./screenshots/Search%20and%20Priority%20Feature%201.PNG)
+
+![Advanced Filtering](./screenshots/Search%20and%20Priority%20Feature%202.PNG)
+
+---
+
+### ⚡ Skeleton Loading State
+
+Skeleton loaders and Suspense boundaries used to improve perceived performance during data fetching.
+
+![Skeleton Loading](./screenshots/Skeleton-Loading.PNG)
+
+---
+
+## 📂 Project Structure
+
+```
+planora
+├─ app
+│  ├─ (dashboard)
+│  ├─ auth
+│  ├─ error.tsx
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  ├─ loading.tsx
+│  ├─ not-found.tsx
+│  ├─ page.tsx
+│  ├─ _actions
+│  ├─ _components
+│  ├─ _dataTypes
+│  └─ _lib
+├─ proxy.ts
+├─ public
+├─ README.md
+└─ utils
+   └─ supabase
+      ├─ client.ts
+      └─ server.ts
+
+```
 
 > **Note:** This project utilizes Next.js **Private Folders** (prefixed with `_`) to colocate logic, components, and actions within the `app` directory without affecting routing, keeping the codebase highly modular.
