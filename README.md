@@ -7,9 +7,9 @@ A high-performance project management platform built with **Next.js 16** App Rou
 - **Full-Stack Kanban Board:** Interactive task management with real-time feedback.
 - **Optimistic UI:** Instant state updates for task creation and updates using React 19's `useOptimistic`.
 - **Advanced Filtering:** Real-time search and category filtering for complex project views.
-- **Secure Authentication:** Multi-strategy auth flow using Supabase Auth and Middleware-based route protection.
-- **Database & Auth:** Supabase (PostgreSQL) with Row Level Security (RLS).
-- **Performance:** Optimized with Skeletons, Selective Hydration, and efficient server-first data fetching.
+- **Secure Authentication:** Multi-strategy auth flow using Supabase Auth with **Proxy-based route protection**.
+- **Database & Auth:** Supabase (PostgreSQL) with Row Level Security (RLS), including a **database View that joins projects with aggregated task counts** for efficient dashboard data retrieval.
+- **Performance:** Optimized using **React Suspense**, **lazy loading**, Skeleton loaders, Selective Hydration, and efficient server-first data fetching for fast Time To Interactive (TTI).
 - **Styling:** Tailwind CSS.
 
 ## 🏗️ Architecture & Technical Decisions
@@ -32,18 +32,18 @@ A high-performance project management platform built with **Next.js 16** App Rou
 
 Customized Design for A Welcome Page. Secure authentication flow powered by Supabase Auth with protected routes and Proxy-based access control.
 
-![Authentication Page](./screenshots/Welcome%20Page.PNG)
+![Welcome Page](./screenshots/Welcome%20Page.PNG)
 
-![Authentication Page](./screenshots/Sign%20in.PNG)
+![Sign in](./screenshots/Sign%20in.PNG)
 
-![Authentication Page](./screenshots/Sign%20up.PNG)
+![Sign up](./screenshots/Sign%20up.PNG)
 
 ---
 
 ### 🧩 Kanban Board Overview
 
-The main dashboard displaying projects and tasks organized in a Kanban board.  
-Tasks are grouped by status (**To Do / In Progress / Done**) with visible priorities and actions.
+The main dashboard displaying projects and tasks organized in a Kanban board.
+Tasks are grouped by status (**To Do / In Progress / Done**) with visible priorities, actions (Edit, Delete) and due dates (highlighted in red if overdue in **To Do** or **In Progress**).
 
 ![Kanban Board Overview 1](./screenshots/Kanban-Board.PNG)
 
@@ -72,23 +72,23 @@ Includes project name, project description, task title, task description, priori
 
 ---
 
-### 🔍 Advanced Filtering
+### 🔍 Advanced Filtering (Priority status, and Keyword search) and Sorting for tasks (Sort by due date (Default), Sorted Earliest first, and Sorted Latest first)
 
 Real-time task filtering by priority status, and keyword search.
 
-![Advanced Filtering](./screenshots/Priority%20Filter%20Feature.PNG)
+![Advanced Priority Filtering](./screenshots/Priority%20Filter%20Feature.PNG)
 
-![Advanced Filtering](./screenshots/Search%20Feature.PNG)
+![Advanced Searching](./screenshots/Search%20Feature.PNG)
 
-![Advanced Filtering](./screenshots/Search%20and%20Priority%20Feature%201.PNG)
+![Advanced Priority Filtering with Searching](./screenshots/Search%20and%20Priority%20Feature%201.PNG)
 
-![Advanced Filtering](./screenshots/Search%20and%20Priority%20Feature%202.PNG)
+![Advanced Sorting, Sorted Earliest first](./screenshots/sorting.PNG)
 
 ---
 
 ### ⚡ Skeleton Loading State
 
-Skeleton loaders and Suspense boundaries used to improve perceived performance during data fetching.
+Skeleton loaders used to improve User Experience during data fetching at first time to load page.
 
 ![Skeleton Loading](./screenshots/Skeleton-Loading.PNG)
 
