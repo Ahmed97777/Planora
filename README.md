@@ -6,7 +6,7 @@ A high-performance project management platform built with **Next.js 16** App Rou
 
 - **Full-Stack Kanban Board:** Interactive task management with real-time feedback.
 - **Optimistic UI:** Instant state updates for task creation and updates using React 19's `useOptimistic`.
-- **Advanced Filtering:** Real-time search and category filtering for complex project views.
+- **Advanced Filtering & Sorting:** Debounced real-time search with priority/status filtering, synchronized with URL query parameters for persistent and shareable views, plus task sorting by creation time (default), earliest due date, or latest due date.
 - **Secure Authentication:** Multi-strategy auth flow using Supabase Auth with **Proxy-based route protection**.
 - **Database & Auth:** Supabase (PostgreSQL) with Row Level Security (RLS), including a **database View that joins projects with aggregated task counts** for efficient dashboard data retrieval.
 - **Performance:** Optimized using **React Suspense**, **lazy loading**, Skeleton loaders, Selective Hydration, and efficient server-first data fetching for fast Time To Interactive (TTI).
@@ -45,9 +45,15 @@ Customized Design for A Welcome Page. Secure authentication flow powered by Supa
 The main dashboard displaying projects and tasks organized in a Kanban board.
 Tasks are grouped by status (**To Do / In Progress / Done**) with visible priorities, actions (Edit, Delete) and due dates (highlighted in red if overdue in **To Do** or **In Progress**).
 
+View 1 of showing task distribution:
+
 ![Kanban Board Overview 1](./screenshots/Kanban-Board.PNG)
 
+View 2 of showing task distribution:
+
 ![Kanban Board Overview 2](./screenshots/Kanban-Board%202.PNG)
+
+All Projects view:
 
 ![Kanban Board Overview all](./screenshots/All%20Projects%20Kanban-Board.PNG)
 
@@ -72,15 +78,26 @@ Includes project name, project description, task title, task description, priori
 
 ---
 
-### 🔍 Advanced Filtering (Priority status, and Keyword search) and Sorting for tasks (Sort by Creation Time (Default), Sorted Earliest first, and Sorted Latest first)
+### 🔍 Advanced Filtering & Sorting
 
-Real-time task filtering by priority status, and keyword search.
+## Filtering and search state are synchronized with URL query parameters (e.g., `?priority=medium`, `?search=for`) to enable shareable, bookmarkable, and persistent dashboard views.
+
+Filter tasks by priority and keyword search (debounced), with state persisted via URL query parameters.
+Sort tasks by creation time (default), earliest due date first, or latest due date first.
+
+Priority Filter Feature:
 
 ![Advanced Priority Filtering](./screenshots/Priority%20Filter%20Feature.PNG)
 
+Search Feature:
+
 ![Advanced Searching](./screenshots/Search%20Feature.PNG)
 
+Priority Filter with Search Feature:
+
 ![Advanced Priority Filtering with Searching](./screenshots/Search%20and%20Priority%20Feature%201.PNG)
+
+Search Feature:
 
 ![Advanced Sorting, Sorted Earliest first](./screenshots/sorting.PNG)
 
@@ -121,4 +138,5 @@ planora
 
 ```
 
-> **Note:** This project utilizes Next.js **Private Folders** (prefixed with `_`) to colocate logic, components, and actions within the `app` directory without affecting routing, keeping the codebase highly modular.
+> **Note:** This project utilizes Next.js **Route Groups** (folders wrapped in `()`) to organize related routes without affecting the URL structure.
+> It also uses **Private Folders** (prefixed with `_`) to colocate logic, components, and actions within the `app` directory without affecting routing, keeping the codebase highly modular.
